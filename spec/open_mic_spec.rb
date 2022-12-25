@@ -17,5 +17,14 @@ RSpec.describe OpenMic do
       expect(open_mic.performers).to eq([])
     end
   end
+
+  describe '#welcome' do 
+    it 'can add performers' do 
+      open_mic.welcome(sal)
+      open_mic.welcome(ali)
+
+      expect(open_mic.performers).to eq([sal, ali])
+    end
+  end
   
 end
