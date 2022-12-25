@@ -12,4 +12,13 @@ RSpec.describe User do
       expect(sal.jokes).to eq([])
     end
   end
+
+  describe '#learn' do 
+    it 'can learn jokes and have those added to the list of jokes' do 
+      sal.learn(joke_1)
+      sal.learn(joke_2)
+      
+      expect(sal.jokes).to eq([joke_1, joke_2])
+    end
+  end
 end
