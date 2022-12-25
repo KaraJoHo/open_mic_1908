@@ -29,13 +29,16 @@ RSpec.describe User do
       sal.tell(ali, joke_2)
 
       expect(ali.jokes).to eq([joke_1, joke_2])
-    end
-  end
-
-  describe '#joke_by_id' do 
-    it 'can return the joke by its id' do 
+  
       expect(ali.joke_by_id(1)).to eq(joke_1)
       expect(ali.joke_by_id(2)).to eq(joke_2)
     end
   end
+
+  # describe '#joke_by_id' do 
+  #   it 'can return the joke by its id' do 
+  #     expect(ali.joke_by_id(1)).to eq(joke_1)
+  #     expect(ali.joke_by_id(2)).to eq(joke_2)
+  #   end
+  # end
 end
