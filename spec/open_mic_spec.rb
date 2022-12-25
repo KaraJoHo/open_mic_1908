@@ -26,5 +26,23 @@ RSpec.describe OpenMic do
       expect(open_mic.performers).to eq([sal, ali])
     end
   end
-  
+
+  describe '#repeated_jokes?' do 
+    it 'returns true if one perfmoer learns a joke from another' do 
+      open_mic.welcome(sal)
+      open_mic.welcome(ali) 
+      ali.learn(joke_1) 
+      ali.learn(joke_2) 
+
+      expect(ali.jokes).to eq([joke_1, joke_2])
+
+      expect(open_mic.repeated_jokes?).to eq(false)
+
+      ali.tell(sal, joke_1) 
+
+      expect(sal.jokes).to eq([joke_1])
+
+      expect(open_mic.repeated_jokes?).to eq(true)
+    end
+  end
 end
