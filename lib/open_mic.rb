@@ -12,12 +12,12 @@ class OpenMic
   end
 
   def repeated_jokes? 
-   
-    if all_jokes.uniq == all_jokes
-      false
-    else 
-      true
-    end
+    all_jokes.uniq != all_jokes
+    # if all_jokes.uniq == all_jokes
+    #   false
+    # else 
+    #   true
+    # end
   end
 
  def all_jokes 
